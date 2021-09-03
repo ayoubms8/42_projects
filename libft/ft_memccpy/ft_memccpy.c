@@ -1,8 +1,8 @@
 #include <stddef.h>
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
 
-void *ft_memcpy(void *dest, const void *src, int c, size_t n)
+void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
     unsigned char *s1;
     unsigned char *s2;
@@ -17,30 +17,24 @@ void *ft_memcpy(void *dest, const void *src, int c, size_t n)
         s1++;
         i++;
     }
-    printf("%ld %ld", i, n);
     if(i == n)
-    {
-        printf("burh");
         return (NULL);
-    }
     return (s1);
 }
-
+/*
 int main()
 {
    char csrc[] = "GeeksforGeeks";
    char cdest[100];
-   char *str;
-   str = ft_memcpy(cdest, csrc, 'k', strlen(csrc)+1);
+   printf("returned string is %s\n", (char *)memccpy(cdest, csrc, 'k', strlen(csrc)+1));
    printf("Copied string is %s\n", cdest);
-   printf("returned string is %s", str);
 
    int isrc[] = {10, 20, 30, 40, 50};
    int n = sizeof(isrc)/sizeof(isrc[0]);
    int idest[n];
    int i;
    int *arr;
-   arr = ft_memcpy(idest, isrc, 3, sizeof(isrc));
+   arr = memccpy(idest, isrc, 30, sizeof(isrc));
    printf("\nCopied array is ");
    for (i=0; i<n; i++)
     printf("%d ", idest[i]);
@@ -50,3 +44,4 @@ int main()
    printf("\n");
    return 0;
 }
+*/
