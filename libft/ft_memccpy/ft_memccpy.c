@@ -21,7 +21,7 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n)
         return (NULL);
     return (s1);
 }
-/*
+
 int main()
 {
    char csrc[] = "GeeksforGeeks";
@@ -44,4 +44,3 @@ int main()
    printf("\n");
    return 0;
 }
-*/
