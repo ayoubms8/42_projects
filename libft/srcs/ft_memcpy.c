@@ -1,7 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-
+#include "header.h"
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {
     unsigned char *s1;
@@ -21,10 +18,9 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 /*
 int main()
 {
-   char csrc[] = "GeeksforGeeks";
-   char cdest[100];
+   char cdest[] = "Geeksforbruh";
    char *str;
-   str = ft_memcpy(cdest, csrc, strlen(csrc)+1);
+   str = ft_memcpy(cdest, cdest+8, 4);
    printf("Copied string is %s\n", cdest);
    printf("Copied string is %s", str);
 

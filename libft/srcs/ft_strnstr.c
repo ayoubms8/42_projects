@@ -1,14 +1,4 @@
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
-
-int ft_strlen(const char *str)
-{
-    int i = 0;
-    while (str[i])
-        i++;  
-    return (i);
-}
+#include "header.h"
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
@@ -25,7 +15,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
             j++;
             i++;
         }
-        if (j == ft_strlen(needle) || j == n)
+        if (j == ft_strlen((char *)needle) || j == n)
         {
             str += k;
             return (str);

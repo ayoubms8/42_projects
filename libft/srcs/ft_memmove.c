@@ -1,7 +1,4 @@
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-
+#include "header.h"
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
     unsigned char *s1;

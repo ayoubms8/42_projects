@@ -1,7 +1,8 @@
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include "header.h"
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	k;
+	size_t	i;
+	size_t	k;
 
 	i = 0;
 	while (src[i])

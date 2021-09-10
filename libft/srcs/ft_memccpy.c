@@ -1,7 +1,4 @@
-#include <stddef.h>
-#include <string.h>
-#include <stdio.h>
-
+#include "header.h"
 void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
     unsigned char *s1;
@@ -9,7 +6,7 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n)
     size_t i;
 
     i = 0;
-    s1 = (unsigned char *)dest;
+    s1 = dest;
     s2 = (unsigned char *)src;
     while (i < n && s2[i - 1] != c)
     {
@@ -18,15 +15,15 @@ void *ft_memccpy(void *dest, const void *src, int c, size_t n)
         i++;
     }
     if(i == n)
-        return (NULL);
+        return ((void *)0);
     return (s1);
 }
-
+/*
 int main()
 {
    char csrc[] = "GeeksforGeeks";
    char cdest[100];
-   printf("returned string is %s\n", (char *)memccpy(cdest, csrc, 'k', strlen(csrc)+1));
+   printf("returned string is %s\n", (char *)memccpy(cdest, csrc, 'k', strlen(csrc)+1)- 1);
    printf("Copied string is %s\n", cdest);
 
    int isrc[] = {10, 20, 30, 40, 50};
@@ -44,3 +41,4 @@ int main()
    printf("\n");
    return 0;
 }
+*/

@@ -1,4 +1,5 @@
-int ft_strlen(char *str)
+#include "header.h"
+size_t ft_strlen(const char *str)
 {
     int i;
 
