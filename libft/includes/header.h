@@ -1,6 +1,12 @@
 #ifndef HEADER_H
 # define HEADER_H
 # include <stdlib.h>
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+    
+}t_list;
 typedef unsigned long int size_t;
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
@@ -23,5 +29,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
+t_list	*ft_lstnew(void *content);
+char	**ft_split(char *str, char *charset)
 
 #endif
