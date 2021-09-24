@@ -1,90 +1,73 @@
 #include "header.h"
-
-char	*create_word(char *str, int i, int j)
+#include <stdio.h>
+int		words_num(const char *s, char c)
 {
-	char	*word;
-	int		o;
-
-	o = 0;
-	word = (char *)malloc(sizeof(char) * (j - i));
-	if (word == ((void *)0))
-		return ((void *)0);
-	while (i < j)
+	int i = 0;
+	int count = 0;
+	while (s[i])
 	{
-		word[o] = str[i];
-		i++;
-		o++;
-	}
-	word[o] = '\0';
-	return (word);
-}
-
-int	is_in_charset(char c, char *charset)
-{
-	int	i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (charset[i] == c)
-			return (1);
+		if (s[i] == c)
+			count++;
 		i++;
 	}
-	return (0);
+	return(count + 1);
 }
 
-int	ft_word_count(char *str, char *charset)
+int	ch7alm_char_tal_next_space(const char *s, char c, int i)
 {
-	int	i;
-	int	word_count;
+	int count;
 
-	i = 0;
-	word_count = 0;
-	while (is_in_charset(str[i], charset))
-		i++;
-	while (str[i])
+	count = 0;
+	while (s[i] != c)
 	{
-		if (str[i] && !(is_in_charset(str[i], charset)))
+		count++;
+		i++;
+	}
+	return (count);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**arr;
+	int		i;
+	int		j;
+	int		k;
+
+	arr = (char **)malloc(sizeof(char *) * (words_num(s, c) + 1));
+	if (arr == NULL)
+		return(NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (c != s[i])
 		{
-			word_count++;
-			while (str[i] && !(is_in_charset(str[i], charset)))
+			arr[j] = (char *)malloc(sizeof(char) * ch7alm_char_tal_next_space(s, c, i));
+			if (arr[j] == NULL)
+				return (NULL);
+			k = 0;
+			while (s[i] != c)
+			{
+				arr[j][k] = s[i];
 				i++;
+				k++;
+			}
+			arr[j][k] = '\0';
+			j++;
 		}
 		i++;
 	}
-	return (word_count);
-}
-
-int	fill_array(int word_count, char *str, char *charset, char **arr)
-{
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	k = 0;
-	while (k < word_count)
-	{
-		while (is_in_charset(str[i], charset) && str[i])
-			i++;
-		j = i;
-		while (!(is_in_charset(str[j], charset)) && str[j])
-			j++;
-		arr[k] = create_word(str, i, j);
-		i = j + 1;
-		k++;
-	}
-	return (k);
-}
-
-char	**ft_split(char *str, char *charset)
-{
-	char	**arr;
-	int		k;
-
-	arr = (char **)malloc(sizeof(char *) * (ft_word_count(str, charset) + 1));
-	if (arr == ((void *)0))
-		return ((void *)0);
-	k = fill_array(ft_word_count(str, charset), str, charset, arr);
+	arr[j] = NULL;
 	return (arr);
+}
+
+int main()
+{
+	int i = 0;
+	char **arr = ft_split("bruh u hate this", ' ');
+	while (i < 5)
+	{
+		printf("%s\n", arr[i]);
+		i++;
+	}
 }

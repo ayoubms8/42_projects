@@ -15,7 +15,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
             j++;
             i++;
         }
-        if (j == ft_strlen((char *)needle) || j == n)
+        if (j == ft_strlen(needle) || j == n)
         {
             str += k;
             return (str);
@@ -25,6 +25,8 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
     return ((void *)0);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int main()
 {
     printf("%s\n", strstr("bruh stop here pls", "here"));

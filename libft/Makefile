@@ -27,7 +27,13 @@ SRC_FILES := ft_atoi.c \
 			ft_tolower.c \
 			ft_toupper.c \
 			ft_strdup.c \
-			ft_calloc.c
+			ft_calloc.c \
+			ft_substr.c \
+			ft_strjoin.c \
+			ft_strtrim.c \
+			ft_itoa.c \
+			ft_strmapi.c \
+			ft_split.c
 OBJ_FILES = $(SRC_FILES:.c=.o)
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(SRC_DIR), $(OBJ_FILES))

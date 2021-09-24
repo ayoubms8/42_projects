@@ -30,6 +30,12 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 t_list	*ft_lstnew(void *content);
-char	**ft_split(char *str, char *charset)
+char	**ft_split(const char *str, char c);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strtrim(const char *s1, const char *set);
+char	*ft_itoa(int nb);
+char    *ft_strmapi(const char *s, char (*f) (unsigned int, char));
+int		is_in_set(char c, const char *set);
 
 #endif
