@@ -42,7 +42,14 @@ OBJ_FILES = $(SRC_FILES:.c=.o)
 SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJS = $(addprefix $(SRC_DIR), $(OBJ_FILES))
 
-BONUS_FILES = ft_lstnew.c
+BONUS_FILES = ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstlast.c \
+			ft_lstsize.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c
 BONUS_OBJ = $(BONUS_FILES:.c=.o)
 BONUSES = $(addprefix $(SRC_DIR), $(BONUS_FILES))
 BONUSOS = $(addprefix $(SRC_DIR), $(BONUS_OBJ))
